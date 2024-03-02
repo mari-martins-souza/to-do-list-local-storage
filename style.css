@@ -1,0 +1,170 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+} 
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-image: url('img/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+
+} 
+
+h1 {
+  font-family: 'Protest Strike', sans-serif;
+  font-weight: 200;
+  font-size: 3rem;
+  color: rgba(0, 0, 0, 0.74);
+  width: 600px;
+  text-align: center;
+  background-image: linear-gradient(to right,#e9662986 , #f8cd6993);
+  border-radius: 10px;
+  padding: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+#adicionar-tarefa {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+  width: 600px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+  #adicionar-tarefa { 
+    width: 90%;
+    height: 60px;
+  }
+}
+
+#nova-atividade {
+  border-radius: 10px;
+  border-style: none;
+  /* padding-left: 10px;
+  padding-right: 10px; */
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: 1em;
+  padding-left: 10px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #adicionar-tarefa, #lista-tarefas {
+      width: 99%;
+      margin-left: 5px;
+    }
+  }
+
+#botao-nova-tarefa {
+ width: 120px;
+ font-family: 'Quicksand', sans-serif;
+ font-size: 22px;
+ color: #665321;
+ background-color: #E5BB4B;
+ border-radius: 10px;
+ /* margin-left: 10px; */
+ border-style: none;
+ box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+}
+
+@media only screen and (max-width: 600px) {
+  #botao-nova-tarefa, #lista-tarefas {
+    margin-right: 5px;
+  }
+}
+
+#container-tarefas {
+  display: flex;
+  justify-content: center;
+}
+
+#lista-tarefas {
+  display: inline-block;
+  overflow-wrap: break-word;
+  width: 600px;
+  margin-bottom: 20px;
+  /* padding-top: 2%; */
+}
+
+@media only screen and (max-width: 600px) {
+  #lista-tarefas { 
+    width: 100%;
+  }
+}
+
+li {
+  font-family: 'Zilla Slab', serif;
+  color:#152b3c;
+  font-size: 1.5rem;
+  list-style: none;
+  padding: 2%;
+  background: #A4C4BF;
+  margin-top: 3%;
+  border-radius: 10px; 
+  overflow: auto; 
+} 
+
+.checkbox {
+  margin-right: 20px;
+  transform: scale(2);
+  margin-left: 10px;
+}
+
+.icone-lixeira {
+  cursor: pointer;
+}
+
+/* .botao-remover {
+  font-size: 20px;
+  margin-left: 20px;
+} */
+
+.checkbox-fixo {
+  margin-right: 20px;
+  transform: scale(2);
+  margin-left: 10px;
+}
+
+/* .botao-remover-fixo {
+  font-size: 20px;
+  margin-left: 20px;
+} */
+
+#contador {
+  display: flex;
+  justify-content: center;
+}
+
+#contador-texto {
+  font-size: 1.5em;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #152b3c85;
+  border-radius: 10px;
+  color: white;
+  padding: 1%;
+  width: 600px;
+  text-align: center;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+.icone-lixeira-fixa {
+  cursor: pointer;
+}
