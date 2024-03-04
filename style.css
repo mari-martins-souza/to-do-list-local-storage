@@ -131,22 +131,6 @@ li {
   cursor: pointer;
 }
 
-/* .botao-remover {
-  font-size: 20px;
-  margin-left: 20px;
-} */
-
-.checkbox-fixo {
-  margin-right: 20px;
-  transform: scale(2);
-  margin-left: 10px;
-}
-
-/* .botao-remover-fixo {
-  font-size: 20px;
-  margin-left: 20px;
-} */
-
 #contador {
   display: flex;
   justify-content: center;
@@ -165,6 +149,3 @@ li {
   margin-right: 1%;
 }
 
-.icone-lixeira-fixa {
-  cursor: pointer;
-}
