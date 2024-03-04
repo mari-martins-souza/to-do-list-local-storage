@@ -1,6 +1,8 @@
 let botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
+let listaTarefas = document.getElementById("lista-tarefas");
+let novaAtividade = document.getElementById("nova-atividade");
+
 botaoNovaTarefa.addEventListener("click",  function() {
-    let novaAtividade = document.getElementById("nova-atividade");
     if (novaAtividade.value !== "") {
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
@@ -31,15 +33,19 @@ botaoNovaTarefa.addEventListener("click",  function() {
             }
         });
 
-        let addNovaTarefa = document.getElementById("lista-tarefas");
-        addNovaTarefa.appendChild(li);
+        listaTarefas.appendChild(li);
         novaAtividade.value = "";
         atualizarContador();
+
+        // localStorage.setItem("listaTarefas", listaTarefas.innerHTML);
+        // listaTarefas.innerHTML = localStorage.getItem("listaTarefas");
 
         iconeLixeira.className ="icone-lixeira";
         checkbox.className = "checkbox";
     }
 });
+
+
 
 function atualizarContador() {
     let contador = document.getElementById("contador-texto");
