@@ -8,7 +8,7 @@ function salvarTarefasLocalStorage() {
 
     for (let i = 0; i < li.length; i++) {
         let tarefa = {
-            nomeDaTarefa: li[i].innerText,
+            nomeDaTarefa: li[i].querySelector("span").innerText,
             tarefaConcluida: li[i].querySelector('input[type="checkbox"]').checked
         };
         tarefas.push(tarefa);
@@ -38,6 +38,12 @@ function carregarTarefasLocalStorage() {
             li.appendChild(span);
             li.appendChild(iconeLixeira);
 
+            if(checkbox.checked) {
+                span.style.textDecoration = "line-through";
+            } else {
+                span.style.textDecoration = "none";
+            }
+
             iconeLixeira.addEventListener("click", function() {
                 let confirmacao = confirm("A exclusão não pode ser revertida, tem certeza?");
                 if (confirmacao) {
@@ -47,9 +53,22 @@ function carregarTarefasLocalStorage() {
                 }
             });
 
+            checkbox.addEventListener("change", function() {
+                if(this.checked) {
+                    this.nextSibling.style.textDecoration = "line-through";
+                } else {
+                    this.nextSibling.style.textDecoration = "none";
+                }
+                setTimeout(salvarTarefasLocalStorage,0);
+            });
+
             listaTarefas.appendChild(li);
+            
+            iconeLixeira.className ="icone-lixeira";
+            checkbox.className = "checkbox";
         }
     }
+    atualizarContador();
 }
 
 window.onload = carregarTarefasLocalStorage;
@@ -84,6 +103,7 @@ botaoNovaTarefa.addEventListener("click",  function() {
             } else {
                 this.nextSibling.style.textDecoration = "none";
             }
+            setTimeout(salvarTarefasLocalStorage,0);
         });
 
         listaTarefas.appendChild(li);
