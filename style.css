@@ -26,10 +26,10 @@ h1 {
   font-family: 'Protest Strike', sans-serif;
   font-weight: 200;
   font-size: 3rem;
-  color: rgba(0, 0, 0, 0.74);
+  color: rgb(0, 39, 139);
   width: 600px;
   text-align: center;
-  background-image: linear-gradient(to right,#e9662986 , #f8cd6993);
+  background-image: linear-gradient(to right,#2943e986 , #52535b93);
   border-radius: 10px;
   padding: 1%;
   margin-left: 1%;
@@ -76,8 +76,8 @@ h1 {
  width: 120px;
  font-family: 'Quicksand', sans-serif;
  font-size: 22px;
- color: #665321;
- background-color: #E5BB4B;
+ color: #d4d8e5;
+ background-color: #516ec6ba;
  border-radius: 10px;
  /* margin-left: 10px; */
  border-style: none;
@@ -115,7 +115,7 @@ li {
   font-size: 1.5rem;
   list-style: none;
   padding: 2%;
-  background: #A4C4BF;
+  background: #98d4f2ed;
   margin-top: 3%;
   border-radius: 10px; 
   overflow: auto; 
@@ -139,7 +139,7 @@ li {
 #contador-texto {
   font-size: 1.5em;
   font-family: 'Quicksand', sans-serif;
-  background-color: #152b3c85;
+  background-color: #6d72779b;
   border-radius: 10px;
   color: white;
   padding: 1%;
