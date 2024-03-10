@@ -37,6 +37,18 @@ body {
   }
 }
 
+@media only screen and (min-width: 1328px) {
+  #container-geral {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  #container-geral {
+    width: 30%;
+  }
+}
+
 h1 {
   font-family: "DM Sans", sans-serif;
   font-weight: 900;
@@ -49,8 +61,6 @@ h1 {
 
 #adicionar-tarefa {
   display: flex;
-  /* width: 40%; */
-  /* margin: auto; */
   margin-top: 25px;
   margin-bottom: 15px;
 }
@@ -58,7 +68,8 @@ h1 {
 #nova-atividade {
   background-color: #FF99FF;
   border-radius: 20px;
-  border-style: none;
+  /* border-style: none; */
+  border: 3px solid black;
   width: 100%;
   flex-grow: 1;
   margin-right: 10px;
@@ -94,7 +105,8 @@ h1 {
   background-color: #DFF600;
   border-radius: 20px;
   text-align: center;
-  border-style: none;
+  /* border-style: none; */
+  border: 3px solid black;
   padding: 5px;
 }
 
@@ -134,6 +146,20 @@ li {
   margin-left: 10px;
 }
 
+@media only screen and (max-width: 1061px) {
+  .checkbox {
+    transform: scale(1.8);
+    margin-bottom: 10px;
+  }
+} 
+
+@media only screen and (max-width: 400px) {
+  .checkbox {
+    transform: scale(1.7);
+    margin-bottom: 10px;
+  }
+} 
+
 .icone-lixeira {
   cursor: pointer;
   width: 26px;
@@ -148,4 +174,5 @@ li {
   color: rgb(0, 0, 0);
   text-align: center;
 }
+
 
