@@ -1,3 +1,9 @@
+window.onload = function() {
+    setTimeout(function() {
+        window.dispatchEvent(new Event('resize'));
+    }, 0);
+}
+
 let botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 let listaTarefas = document.getElementById("lista-tarefas");
 let novaAtividade = document.getElementById("nova-atividade");
@@ -122,5 +128,6 @@ function atualizarContador() {
     let listaTarefas = document.getElementById("lista-tarefas");
     contador.innerText = "total tasks: " + listaTarefas.children.length;
 };
+
 
 
