@@ -1,17 +1,63 @@
-window.addEventListener('resize', function() {
-    let width = window.innerWidth;
-    let textoPlaceholder = document.getElementById('nova-atividade');
-  
-    if (width <= 900) {
-      textoPlaceholder.placeholder = 'type a task';
+function alterarPlaceholder() {
+    let textoPlaceholder = document.getElementById("nova-atividade");
+    let qntdTarefas = document.getElementById("lista-tarefas");
+    if (qntdTarefas.children.length > 0) {
+        textoPlaceholder.placeholder = "type one more"
     } else {
-      textoPlaceholder.placeholder = 'type your next task';
-    }
-  });
+        textoPlaceholder.placeholder = "type a task"
+    };
+};
 
 let botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 let listaTarefas = document.getElementById("lista-tarefas");
 let novaAtividade = document.getElementById("nova-atividade");
+
+botaoNovaTarefa.addEventListener("click",  function() {
+    if (novaAtividade.value !== "") {
+        let checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        let li = document.createElement("li");
+        let iconeLixeira = document.createElement("img");
+        iconeLixeira.src = "img/excluir2.png"
+        iconeLixeira.style.float = "right";
+        let span = document.createElement("span");
+        
+        span.appendChild(document.createTextNode(novaAtividade.value));
+        li.appendChild(checkbox);
+        li.appendChild(span);
+        li.appendChild(iconeLixeira);
+      
+        iconeLixeira.addEventListener("click", function() {
+            let confirmacao = confirm("This cannot be undone, are you sure?");
+            if (confirmacao) {
+                this.parentElement.remove()   
+                atualizarContador();  
+                salvarTarefasLocalStorage();
+                alterarPlaceholder();   
+            }
+        });
+           
+        checkbox.addEventListener("change", function() {
+            if(this.checked) {
+                this.nextSibling.style.textDecoration = "line-through";
+            } else {
+                this.nextSibling.style.textDecoration = "none";
+            }
+            setTimeout(salvarTarefasLocalStorage,0);
+        });
+
+        listaTarefas.appendChild(li);
+        novaAtividade.value = "";
+        atualizarContador();
+        alterarPlaceholder();
+
+        iconeLixeira.className ="icone-lixeira";
+        checkbox.className = "checkbox";
+
+        salvarTarefasLocalStorage();
+    }
+});
+
 
 function salvarTarefasLocalStorage() {
     let li = listaTarefas.children;
@@ -61,6 +107,7 @@ function carregarTarefasLocalStorage() {
                     this.parentElement.remove();
                     atualizarContador();
                     salvarTarefasLocalStorage();
+                    alterarPlaceholder();
                 }
             });
 
@@ -80,53 +127,11 @@ function carregarTarefasLocalStorage() {
         }
     }
     atualizarContador();
+    alterarPlaceholder();
 }
 
 window.onload = carregarTarefasLocalStorage;
 
-botaoNovaTarefa.addEventListener("click",  function() {
-    if (novaAtividade.value !== "") {
-        let checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        let li = document.createElement("li");
-        let iconeLixeira = document.createElement("img");
-        iconeLixeira.src = "img/excluir2.png"
-        iconeLixeira.style.float = "right";
-        let span = document.createElement("span");
-        
-        span.appendChild(document.createTextNode(novaAtividade.value));
-        li.appendChild(checkbox);
-        li.appendChild(span);
-        li.appendChild(iconeLixeira);
-        
-        iconeLixeira.addEventListener("click", function() {
-            let confirmacao = confirm("This cannot be undone, are you sure?");
-            if (confirmacao) {
-                this.parentElement.remove()   
-                atualizarContador();  
-                salvarTarefasLocalStorage();   
-            }
-        });
-           
-        checkbox.addEventListener("change", function() {
-            if(this.checked) {
-                this.nextSibling.style.textDecoration = "line-through";
-            } else {
-                this.nextSibling.style.textDecoration = "none";
-            }
-            setTimeout(salvarTarefasLocalStorage,0);
-        });
-
-        listaTarefas.appendChild(li);
-        novaAtividade.value = "";
-        atualizarContador();
-
-        iconeLixeira.className ="icone-lixeira";
-        checkbox.className = "checkbox";
-
-        salvarTarefasLocalStorage();
-    }
-});
 
 function atualizarContador() {
     let contador = document.getElementById("contador-texto");
