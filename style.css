@@ -125,7 +125,7 @@ h1 {
 
 #lista-tarefas {
   overflow-wrap: break-word;
-  width: 600px;
+  width: 100%;
 }
 
 li {
@@ -134,37 +134,56 @@ li {
   color:#000000;
   font-size: 1.5rem;
   list-style: none;
-  padding: 2%;
+  padding-top: 2%;
+  padding-bottom: 3%;
+  padding-left: 10%;
+  padding-right: 10%;
   background: #FF99FF;
   margin-top: 3%;
   border-radius: 20px;
+  position: relative;
 }
 
+@media only screen and (max-width: 450px) {
+  li {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+} 
+
+@media only screen and (min-width: 700px) {
+  li {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+} 
+
 .checkbox {
-  margin-right: 20px;
-  transform: scale(2);
-  margin-left: 10px;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%) scale(2);
 }
 
 @media only screen and (max-width: 1061px) {
   .checkbox {
-    transform: scale(1.8);
-    margin-bottom: 10px;
+    transform: translateY(-50%) scale(1.8);
   }
 } 
 
 @media only screen and (max-width: 400px) {
   .checkbox {
-    transform: scale(1.7);
-    margin-bottom: 10px;
+    transform: translateY(-50%) scale(1.7);
   }
 } 
 
 .icone-lixeira {
   cursor: pointer;
   width: 26px;
-  margin-right: 10px;
-  padding-top: 5px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #contador-texto {
