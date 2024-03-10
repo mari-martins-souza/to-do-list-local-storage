@@ -3,91 +3,84 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-} 
-
-html {
-  font-size: 16px;
 }
 
 body {
-  background-image: url('img/background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #747DFF;
 }
 
-header {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
+@media only screen and (max-width: 700px) {
+  body {
+    background-color: white;
+  }
+}
 
-} 
+#container-geral {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  padding: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 700px) {
+  #container-geral {
+    width: 100%vh;
+    margin: 0px;
+    margin-top: 75px;
+    border-radius: 0%;
+  }
+}
+
 
 h1 {
-  font-family: 'Protest Strike', sans-serif;
-  font-weight: 200;
-  font-size: 3rem;
-  color: rgb(0, 39, 139);
-  width: 600px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 4rem;
+  color: rgb(0, 0, 0);  
   text-align: center;
-  background-image: linear-gradient(to right,#2943e986 , #52535b93);
-  border-radius: 10px;
-  padding: 1%;
-  margin-left: 1%;
-  margin-right: 1%;
 }
 
 #adicionar-tarefa {
   display: flex;
-  justify-content: center;
-  height: 60px;
   width: 600px;
   margin: auto;
   margin-top: 25px;
   margin-bottom: 15px;
 }
 
-@media only screen and (max-width: 600px) {
-  #adicionar-tarefa { 
-    width: 90%;
-    height: 60px;
-  }
-}
-
 #nova-atividade {
-  border-radius: 10px;
+  background-color: #FF99FF;
+  border-radius: 20px;
   border-style: none;
-  /* padding-left: 10px;
-  padding-right: 10px; */
-  box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
   flex-grow: 1;
   margin-right: 10px;
-  font-size: 1em;
-  padding-left: 10px;
-  }
-  
-  @media only screen and (max-width: 600px) {
-    #adicionar-tarefa, #lista-tarefas {
-      width: 99%;
-      margin-left: 5px;
-    }
+  font-size: 1.5em;
+  padding: 15px;
   }
 
-#botao-nova-tarefa {
- width: 120px;
- font-family: 'Quicksand', sans-serif;
- font-size: 22px;
- color: #d4d8e5;
- background-color: #516ec6ba;
- border-radius: 10px;
- /* margin-left: 10px; */
- border-style: none;
- box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+#nova-atividade::placeholder {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  color: #f8cbf8;
+  font-size: 1em;
 }
 
-@media only screen and (max-width: 600px) {
-  #botao-nova-tarefa, #lista-tarefas {
-    margin-right: 5px;
-  }
+#botao-nova-tarefa {
+  width: 23%;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 900;
+  font-size: 1.5em;
+  color: #000000;
+  background-color: #DFF600;
+  border-radius: 20px;
+  text-align: center;
+  border-style: none;
 }
 
 #container-tarefas {
@@ -96,30 +89,21 @@ h1 {
 }
 
 #lista-tarefas {
-  display: inline-block;
   overflow-wrap: break-word;
   width: 600px;
-  margin-bottom: 20px;
-  /* padding-top: 2%; */
-}
-
-@media only screen and (max-width: 600px) {
-  #lista-tarefas { 
-    width: 100%;
-  }
 }
 
 li {
-  font-family: 'Zilla Slab', serif;
-  color:#152b3c;
+  font-family: "DM Sans", sans-serif;
+  font-weight: light;
+  color:#000000;
   font-size: 1.5rem;
   list-style: none;
   padding: 2%;
-  background: #98d4f2ed;
+  background: #FF99FF;
   margin-top: 3%;
-  border-radius: 10px; 
-  overflow: auto; 
-} 
+  border-radius: 20px;
+}
 
 .checkbox {
   margin-right: 20px;
@@ -129,23 +113,16 @@ li {
 
 .icone-lixeira {
   cursor: pointer;
-}
-
-#contador {
-  display: flex;
-  justify-content: center;
+  width: 26px;
+  margin-right: 10px;
+  padding-top: 5px;
 }
 
 #contador-texto {
-  font-size: 1.5em;
-  font-family: 'Quicksand', sans-serif;
-  background-color: #6d72779b;
-  border-radius: 10px;
-  color: white;
-  padding: 1%;
-  width: 600px;
+  font-size: 1.6em;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 1000;
+  color: rgb(0, 0, 0);
   text-align: center;
-  margin-left: 1%;
-  margin-right: 1%;
 }
 

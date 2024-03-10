@@ -29,7 +29,7 @@ function carregarTarefasLocalStorage() {
             checkbox.checked = tarefas[i].tarefaConcluida;
             let li = document.createElement("li");
             let iconeLixeira = document.createElement("img");
-            iconeLixeira.src = "img/lixeira-x.png"
+            iconeLixeira.src = "img/excluir2.png"
             iconeLixeira.style.float = "right";
             let span = document.createElement("span");
 
@@ -45,7 +45,7 @@ function carregarTarefasLocalStorage() {
             }
 
             iconeLixeira.addEventListener("click", function() {
-                let confirmacao = confirm("A exclusão não pode ser revertida, tem certeza?");
+                let confirmacao = confirm("This cannot be undone, are you sure?");
                 if (confirmacao) {
                     this.parentElement.remove();
                     atualizarContador();
@@ -79,7 +79,7 @@ botaoNovaTarefa.addEventListener("click",  function() {
         checkbox.type = "checkbox";
         let li = document.createElement("li");
         let iconeLixeira = document.createElement("img");
-        iconeLixeira.src = "img/lixeira-x.png"
+        iconeLixeira.src = "img/excluir2.png"
         iconeLixeira.style.float = "right";
         let span = document.createElement("span");
         
@@ -89,7 +89,7 @@ botaoNovaTarefa.addEventListener("click",  function() {
         li.appendChild(iconeLixeira);
         
         iconeLixeira.addEventListener("click", function() {
-            let confirmacao = confirm("A exclusão não pode ser revertida, tem certeza?");
+            let confirmacao = confirm("This cannot be undone, are you sure?");
             if (confirmacao) {
                 this.parentElement.remove()   
                 atualizarContador();  
@@ -120,7 +120,7 @@ botaoNovaTarefa.addEventListener("click",  function() {
 function atualizarContador() {
     let contador = document.getElementById("contador-texto");
     let listaTarefas = document.getElementById("lista-tarefas");
-    contador.innerText = "Tarefas em aberto: " + listaTarefas.children.length;
+    contador.innerText = "total tasks: " + listaTarefas.children.length;
 };
 
 
