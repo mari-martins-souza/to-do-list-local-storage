@@ -1,8 +1,13 @@
-window.onload = function() {
-    setTimeout(function() {
-        window.dispatchEvent(new Event('resize'));
-    }, 0);
-}
+window.addEventListener('resize', function() {
+    let width = window.innerWidth;
+    let textoPlaceholder = document.getElementById('nova-atividade');
+  
+    if (width <= 900) {
+      textoPlaceholder.placeholder = 'type a task';
+    } else {
+      textoPlaceholder.placeholder = 'type your next task';
+    }
+  });
 
 let botaoNovaTarefa = document.getElementById("botao-nova-tarefa");
 let listaTarefas = document.getElementById("lista-tarefas");
