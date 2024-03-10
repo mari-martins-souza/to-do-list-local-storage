@@ -19,7 +19,6 @@ botaoNovaTarefa.addEventListener("click",  function() {
         let li = document.createElement("li");
         let iconeLixeira = document.createElement("img");
         iconeLixeira.src = "img/excluir2.png"
-        iconeLixeira.style.float = "right";
         let span = document.createElement("span");
         
         span.appendChild(document.createTextNode(novaAtividade.value));
@@ -87,7 +86,6 @@ function carregarTarefasLocalStorage() {
             let li = document.createElement("li");
             let iconeLixeira = document.createElement("img");
             iconeLixeira.src = "img/excluir2.png"
-            iconeLixeira.style.float = "right";
             let span = document.createElement("span");
 
             span.appendChild(document.createTextNode(tarefas[i].nomeDaTarefa));
