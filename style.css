@@ -7,6 +7,9 @@
 
 body {
   background-color: #747DFF;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 @media only screen and (max-width: 700px) {
@@ -77,23 +80,11 @@ h1 {
   padding: 15px;
   }
 
-  @media only screen and (max-width: 700px) {
-    #nova-atividade {
-      background-color: #747DFF;
-    }
-  }  
-
 #nova-atividade::placeholder {
   font-family: "DM Sans", sans-serif;
   font-weight: 400;
   color: #f8cbf8;
   font-size: 1em;
-}
-
-@media only screen and (max-width: 700px) {
-  #nova-atividade::placeholder {
-    color: #a7acfa;
-  }
 } 
 
 #botao-nova-tarefa {
@@ -194,4 +185,28 @@ li {
   text-align: center;
 }
 
+footer {
+  color: #b6baf5;
+  font-family: "DM Sans", sans-serif;
+  font-weight: light;
+  margin-top: auto;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #b6baf5;
+  font-weight: 900;
+}
+
+footer a:hover {
+  color: #000000;
+}
+
+@media only screen and (max-width: 700px) {
+  footer, footer a {
+    color: rgb(202, 202, 202);
+  }
+}
 
