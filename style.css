@@ -21,7 +21,7 @@ body {
 #container-background {
   display: flex;
   flex-direction: column;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   /* height: 100vh; */
   background-color: transparent;
@@ -58,7 +58,7 @@ body {
 
 @media only screen and (max-width: 700px) {
   #container-geral {
-    width: 100vw;
+    width: 100%;
     margin: 0px;
     margin-top: 55px;
     border-radius: 0%;
