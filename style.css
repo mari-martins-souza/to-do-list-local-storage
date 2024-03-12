@@ -33,9 +33,9 @@ body {
 
 @media only screen and (max-width: 700px) {
   #container-geral {
-    width: 100vw;
+    width: 100%;
     margin: 0px;
-    margin-top: 75px;
+    margin-top: 20px;
     border-radius: 0%;
   }
 }
@@ -191,6 +191,8 @@ footer {
   font-weight: light;
   margin-top: auto;
   padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   text-align: center;
 }
 
